@@ -1,79 +1,46 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+ensures npm, ruby, xCode is installed <br>
 
-# Getting Started
+navigate to a directory in terminal <br>
+npx react-native init CoTask <br>
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+npm install --save react-native-vector-icons <br>
+npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view <br>
+npm install @react-navigation/stack @react-navigation/native <br>
+npm install react-native-sqlite-storage <br>
+npm install react-native-ui-datepicker <br>
+npm install react-native-select-dropdown <br>
+npm i @react-native-community/checkbox <br>
+npm i @react-native-async-storage/async-storage <br>
+npm i react-native-document-picker <br>
+npm i react-native-file-viewer <br>
+npm install --save @notifee/react-native <br>
+npm i react-native-gesture-handler <br>
+npm i @testing-library/react-native <br>
 
-## Step 1: Start the Metro Server
+cd ios
+pod install
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+open ios/CoTask.xcworkspace
 
-To start Metro, run the following command from the _root_ of your React Native project:
+...add app icons...[1] <br>
+cotask/cotask <br>
+Create new group called "Fonts" <br>
+add file node_module/react-native-vector-icons/Fonts/Octicons.ttf <br>
 
-```bash
-# using npm
-npm start
+info.plist <br>
+Add Fonts provided by application(array) <br>
+Add Item 0: Octicons.ttf <br>
 
-# OR using Yarn
-yarn start
-```
+cd ios <br>
+pod install <br> 
+team sign in <br>
 
-## Step 2: Start your Application
+if there is multiple commands produce error, remove Octicons.ttf from app > build phases > copy bundle resources. <br>
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Reference <br>
+[1] Vimniky Luo (4 May 2016) How to use vector icons in your react native project [Online]. Available from: https://medium.com/@vimniky/how-to-use-vector-icons-in-your-react-native-project-8212ac6a8f06 [15 August 2024]
 
-### For Android
 
-```bash
-# using npm
-npm run android
 
-# OR using Yarn
-yarn android
-```
 
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+# CoTask
