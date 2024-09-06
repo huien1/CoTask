@@ -107,7 +107,7 @@ const ViewTask = ({ route, navigation }) => {
     const deleteTask = (task_id) => {
         db.transaction((tx) => {
             tx.executeSql(
-                'DELETE FROM Tasks WHERE task_id=?',
+                'DELETE FROM Tasks WHERE task_id=?', [task_id]
             );
         });
         navigation.navigate('HomeScreen');
