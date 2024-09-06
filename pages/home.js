@@ -22,7 +22,6 @@ const Home = ({ navigation }) => {
     var isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
     dayjs.extend(isSameOrBefore);
 
-
     const updateTaskBGColour = async () => {
         try {
             const value = await AsyncStorage.getItem("@taskBGColour");
@@ -240,7 +239,7 @@ const Home = ({ navigation }) => {
                             animationDuration="0.1"
                             onValueChange={(setSelection) => {
                                 if (setSelection) {
-                                    setPoints(points + item.task_points + completed_score());
+                                    setPoints(points + item.task_points + completed_score(item.due_date));
                                     db.transaction((tx) => {
                                         tx.executeSql(
                                             'UPDATE Tasks set completed_date=?, completed=? where task_id=?',
@@ -248,7 +247,7 @@ const Home = ({ navigation }) => {
                                         );
                                         tx.executeSql(
                                             'UPDATE Users set user_points=? where user_id=?',
-                                            [points + item.task_points + completed_score(), 1],
+                                            [points + item.task_points + completed_score(item.due_date), 1],
                                         );
                                     });
                                     // Alert.alert("Points gained:" + item.task_points);
@@ -258,7 +257,7 @@ const Home = ({ navigation }) => {
                                     }
                                 }
                                 else {
-                                    setPoints(item.user_points - item.task_points - completed_score());
+                                    setPoints(item.user_points - item.task_points - completed_score(item.due_date));
                                     db.transaction((tx) => {
                                         tx.executeSql(
                                             'UPDATE Tasks set completed_date=?, completed=? where task_id=?',
@@ -266,7 +265,7 @@ const Home = ({ navigation }) => {
                                         );
                                         tx.executeSql(
                                             'UPDATE Users set user_points=? where user_id=?',
-                                            [item.user_points - item.task_points - completed_score(), 1],
+                                            [item.user_points - item.task_points - completed_score(item.due_date), 1],
                                         );
                                     });
                                     if (completedTasksIndexes.includes(item.task_id)) {
