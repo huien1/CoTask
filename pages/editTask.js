@@ -282,7 +282,7 @@ const EditTask = (props) => {
                                     onSelect={(priority_level) => {
                                         setPriority_level(priority_level);
                                     }}
-                                    defaultValue={task.priority_level}
+                                    defaultValue={priority_level}
                                     // use default value by index or default value
                                     renderButton={(priority_level, isOpen) => {
                                         return (
