@@ -78,9 +78,6 @@ const EditTask = (props) => {
             setRefreshed(true);
         }
         else {
-            setTaskTitle(task.taskTitle);
-            setPriority_level(task.priority_level);
-            setTaskNote(task.task_note);
             setDuedate(task.due_date);
             setReminderDateTime(task.reminder_datetime);
             setRepeatStartDate(dayjs(task.repeat_start_date));
